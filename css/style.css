@@ -3,53 +3,84 @@
 }
 
 body{
+    font-family: Arial, Helvetica, sans-serif;
     background-color: beige;
     overflow: hidden;
     padding: 50px 10px;
 }
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
 
-.transition p{
-    font-size: 40px;
-    transition: ;
+.btn{
+    position: relative;
+    background: lightblue;
+    color: red;
+    width: 10rem;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
 }
-.transition2 p{
-    font-size: 40px;
-}
-.transition3 p{
-    font-size: 40px;
-}
-.transition p::before{
-    background-color: red;
-    content: "";
+
+.btn::after{
+    content: '';
     position: absolute;
+    width: 100%;
+    height: 0.175rem;
+    background: turquoise;
+    left: 0;
+    bottom: 0;
 }
 
-.transition p::after{
+/* Animation hover centrale */
+.btn-center::after{
+    transform: scale(0, 1);
+    transition: transform 0.3s ease;
+}
 
+/* Animation hover centrale */
+.btn-center:hover::after{
+    transform: scale(1, 1);
+}
+
+/* Animation hover Gauche */
+.btn-left::after{
+    transform: scale(0, 1);
+    transform-origin: 0% 100%;
+    transition: transform 0.5s ease;
+}
+
+/* Animation hover Gauche */
+.btn-left:hover::after{
+    transform: scale(1, 1);
+}
+
+/* Animation hover Bottom */
+.btn-bottom{
+    overflow: hidden;
+}
+.btn-bottom::after{
+    transform: translateY(3px);
+}
+
+.btn-bottom:hover::after{
+    transform: translateY(100px);
+    transition: transform 0.5s ease-in;
+    height: 20%;
 }
 
 
-.transition2 p{
-
-}
-.transition2 p::before{
-
-}
-
-.transition2 p::after{
-
-}
 
 
-.transition3 p{
 
-}
-.transition3 p::before{
 
-}
-
-.transition3 p::after{
-
-}
 
 
